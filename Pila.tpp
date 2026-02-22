@@ -164,9 +164,6 @@ const char *Pila<T>::PilaVacia::what() const throw()
 template <typename T>
 void Pila<T>::Redimensionar()
 {
-    // Guardar el arreglo en un puntero auxuliar
-    // Borrar la memoria vieja
-    // Crear nueva memoria para el
 
     try{
         int nuevaCapacidad = capacidad*2;

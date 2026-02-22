@@ -10,13 +10,6 @@ using namespace std;
 
 int main()
 {
-    string hola = "mundo";
-
-    cout << hola.capacity() << endl;
-
-
-
-    /*
 
     try{
         Pila<int> P;
@@ -38,7 +31,6 @@ int main()
     }catch(...){
         cerr << "Ocurri\242 un error inesperado" << endl;
     }
-    */
 
     /*
 
