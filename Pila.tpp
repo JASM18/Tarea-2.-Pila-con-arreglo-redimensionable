@@ -24,11 +24,12 @@ Pila<T>::Pila(const Pila<T> &pila) : elemento(nullptr)
 template <typename T>
 Pila<T> & Pila<T>::operator=(const Pila<T> &pila)
 {
+    // Evita la auto-asignacion
     if(this == &pila){
         return *this;
     }
 
-    // Codigo de copiado
+    delete[] elemento;
 
     return *this;
 }
@@ -100,6 +101,7 @@ template <typename T>
 bool Pila<T>::EstaLlena() const
 {
     if(tope == capacidad-1){
+        std::cout << "SE LLENO JAJA" << std::endl;
         return true;
     }
 
@@ -120,6 +122,14 @@ template <typename T>
 int Pila<T>::ObtenerTam() const
 {
     return tope +1;
+}
+
+//***********************************
+
+template<typename T>
+int Pila<T>::ObtenerCapacidad() const
+{
+    return this->capacidad;
 }
 
 //***********************************
@@ -158,7 +168,23 @@ void Pila<T>::Redimensionar()
     // Borrar la memoria vieja
     // Crear nueva memoria para el
 
-    capacidad *= 2;
+    try{
+        int nuevaCapacidad = capacidad*2;
+
+        T *temp = new T[nuevaCapacidad];
+
+        for(int i = 0 ; i <= tope ; ++i){
+            temp[i] = elemento[i];
+        }
+
+        delete[] elemento;
+
+        elemento = temp;
+        capacidad = nuevaCapacidad;
+
+    }catch(const std::bad_alloc&){
+        throw "Error: No hay memoria para redimensionar la Pila.";
+    }
 }
 
 //***********************************

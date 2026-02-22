@@ -73,6 +73,13 @@ public:
 
     /** \brief
      *
+     * \return int
+     *
+     */
+    int ObtenerCapacidad() const;
+
+    /** \brief
+     *
      * \return void
      *
      */
