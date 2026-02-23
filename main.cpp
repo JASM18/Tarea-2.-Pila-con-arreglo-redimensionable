@@ -8,28 +8,6 @@ using namespace std;
 int main()
 {
 
-    try{
-        Pila<int> P;
-
-        for(int i = 0 ; i < 15 ; ++i){
-            P.Agregar(i);
-            cout << endl;
-            cout << P;
-            cout << endl;
-            cout << P.ObtenerCapacidad();
-        }
-
-        cout << P;
-
-    }catch(Pila<int>::PilaVacia &errorVacio){
-        //cerr << "Error: " << errorVacio.QuePaso() << endl;
-        cerr << "Error en la pila: " << errorVacio.what() << endl;
-    }catch(...){
-        cerr << "Ocurri\242 un error inesperado" << endl;
-    }
-
-    /*
-
     // PILA DE ENTEROS
     try{
         cout << "-----> PILA DE ENTEROS <-----" << endl;
@@ -127,6 +105,7 @@ int main()
     }
     cout << endl;
 
+
     // PILA DE PILAS
     try{
         cout << "-----> PILA DE PILAS DE ENTERO <-----" << endl;
@@ -164,7 +143,6 @@ int main()
         cerr << "Ocurri\242 un error inesperado" << endl;
     }
 
-    */
 
     return 0;
 }

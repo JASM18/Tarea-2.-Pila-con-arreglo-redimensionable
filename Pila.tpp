@@ -7,8 +7,12 @@
 template <typename T /*= int*/>
 Pila<T>::Pila() : capacidad(15), tope(SIN_ELEMENTOS)
 {
-    // FALTA POR HACER: Gestionar la excepción potencial arrojada por new
-    elemento = new T[capacidad];
+    try{
+        elemento = new T[capacidad];
+    }catch(const std::bad_alloc&){
+        elemento = nullptr;
+        throw "Error: No hay memoria disponible.";
+    }
 }
 
 //***********************************
@@ -86,7 +90,6 @@ template <typename T>
 bool Pila<T>::EstaLlena() const
 {
     if(tope == capacidad-1){
-        std::cout << "SE LLENO JAJA" << std::endl;
         return true;
     }
 
@@ -177,19 +180,22 @@ Pila<T> & Pila<T>::operator=(const Pila<T> &pila)
     try{
         // Evita la auto-asignacion
         if(this == &pila){
-        return *this;
+            return *this;
         }
 
-        *this.capacidad = pila.capacidad;
-        *this.tope = pila.tope;
+        T *nuevoElemento = new T[pila.capacidad];
+
+        for (int i = 0; i <=tope; i++){
+            nuevoElemento[i] = pila.elemento[i];
+        }
 
         delete[] elemento;
 
-        elemento = new T[pila.capacidad];
+        elemento = nuevoElemento;
 
-        for (int i = 0; i <=tope; i++){
-            *this.elemento[i] = pila.elemento[i];
-        }
+        this->capacidad = pila.capacidad;
+        this->tope = pila.tope;
+
 
     }catch(const std::bad_alloc&){
         throw "Error: No hay memoria disponible.";
