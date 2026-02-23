@@ -32,7 +32,7 @@ Pila<T>::~Pila()
 }
 
 //***********************************
-// MÈTODOS
+// M…TODOS
 //***********************************
 
 template <typename T>
@@ -43,8 +43,6 @@ void Pila<T>::Agregar(T valor)
     }
     ++tope;
     elemento[tope] = valor;
-
-    //elemento[++tope] = valor;
 }
 
 //***********************************
@@ -53,11 +51,9 @@ template <typename T>
 void Pila<T>::Eliminar()
 {
     if(EstaVacia()){
-        //throw "Pila vac\241a";
         throw PilaVacia(); // Eso es una llamada EXPLICITA al constructor de la clase "PilaVacia"
     }
     --tope;
-    //elemento[tope];
 }
 
 //***********************************
@@ -66,9 +62,9 @@ template <typename T>
 T Pila<T>::ObtenerTope() const
 {
     if(EstaVacia()){
-        //throw "Pila vac\241a";
         throw PilaVacia();
     }
+
     return elemento[tope];
 }
 
@@ -129,7 +125,9 @@ void Pila<T>::Imprimir() const
     for(int i = tope ; i >= 0 ; --i){
         std::cout << elemento[i] << ", ";
     }
-    if(!EstaVacia()) std::cout << "\b\b" << std::endl;
+    if(!EstaVacia()){
+        std::cout << "\b\b ";
+    }
 }
 
 //***********************************
@@ -137,7 +135,7 @@ void Pila<T>::Imprimir() const
 //***********************************
 
 template <typename T>
-Pila<T>::PilaVacia::PilaVacia() throw() /*: mensaje("La pila se encuentra vac\241a")*/{}
+Pila<T>::PilaVacia::PilaVacia() throw() {}
 
 //***********************************
 
@@ -185,7 +183,7 @@ Pila<T> & Pila<T>::operator=(const Pila<T> &pila)
 
         T *nuevoElemento = new T[pila.capacidad];
 
-        for (int i = 0; i <=tope; i++){
+        for (int i = 0; i <= pila.tope; i++){
             nuevoElemento[i] = pila.elemento[i];
         }
 
