@@ -22,21 +22,6 @@ Pila<T>::Pila(const Pila<T> &pila) : elemento(nullptr)
 //***********************************
 
 template <typename T>
-Pila<T> & Pila<T>::operator=(const Pila<T> &pila)
-{
-    // Evita la auto-asignacion
-    if(this == &pila){
-        return *this;
-    }
-
-    delete[] elemento;
-
-    return *this;
-}
-
-//***********************************
-
-template <typename T>
 Pila<T>::~Pila()
 {
     delete[] elemento;
@@ -185,6 +170,35 @@ void Pila<T>::Redimensionar()
 }
 
 //***********************************
+
+template <typename T>
+Pila<T> & Pila<T>::operator=(const Pila<T> &pila)
+{
+    try{
+        // Evita la auto-asignacion
+        if(this == &pila){
+        return *this;
+        }
+
+        *this.capacidad = pila.capacidad;
+        *this.tope = pila.tope;
+
+        delete[] elemento;
+
+        elemento = new T[pila.capacidad];
+
+        for (int i = 0; i <=tope; i++){
+            *this.elemento[i] = pila.elemento[i];
+        }
+
+    }catch(const std::bad_alloc&){
+        throw "Error: No hay memoria disponible.";
+    }
+
+    return *this;
+}
+
+//***********************************
 // Amiguitas de la plantilla de clase Pila<T>
 //***********************************
 
@@ -201,5 +215,7 @@ std::ostream & operator<<(std::ostream & salida, const Pila<TT> &pila)
 
     return salida;
 }
+
+
 
 

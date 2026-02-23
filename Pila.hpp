@@ -10,7 +10,7 @@ class Pila{
     friend std::ostream & operator<<(std::ostream & salida, const Pila<TT> &pila);
 
 public:
-    /** Default constructor */
+    /** Constructor por default */
     Pila();
 
     /** \brief
@@ -18,6 +18,7 @@ public:
      * \param pila const Pila<T>&
      *
      */
+
     Pila(const Pila<T> &pila); // Constructor de copias
 
     /** \brief
