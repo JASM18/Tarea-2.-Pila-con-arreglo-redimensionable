@@ -7,8 +7,12 @@
 template <typename T /*= int*/>
 Pila<T>::Pila() : capacidad(15), tope(SIN_ELEMENTOS)
 {
-    // FALTA POR HACER: Gestionar la excepción potencial arrojada por new
-    elemento = new T[capacidad];
+    try{
+        elemento = new T[capacidad];
+    }catch(const std::bad_alloc&){
+        elemento = nullptr;
+        throw "Error: No hay memoria disponible.";
+    }
 }
 
 //***********************************
@@ -22,28 +26,13 @@ Pila<T>::Pila(const Pila<T> &pila) : elemento(nullptr)
 //***********************************
 
 template <typename T>
-Pila<T> & Pila<T>::operator=(const Pila<T> &pila)
-{
-    // Evita la auto-asignacion
-    if(this == &pila){
-        return *this;
-    }
-
-    delete[] elemento;
-
-    return *this;
-}
-
-//***********************************
-
-template <typename T>
 Pila<T>::~Pila()
 {
     delete[] elemento;
 }
 
 //***********************************
-// MéTODOS
+// MÉTODOS
 //***********************************
 
 template <typename T>
@@ -54,8 +43,6 @@ void Pila<T>::Agregar(T valor)
     }
     ++tope;
     elemento[tope] = valor;
-
-    //elemento[++tope] = valor;
 }
 
 //***********************************
@@ -64,11 +51,9 @@ template <typename T>
 void Pila<T>::Eliminar()
 {
     if(EstaVacia()){
-        //throw "Pila vac\241a";
         throw PilaVacia(); // Eso es una llamada EXPLICITA al constructor de la clase "PilaVacia"
     }
     --tope;
-    //elemento[tope];
 }
 
 //***********************************
@@ -77,9 +62,9 @@ template <typename T>
 T Pila<T>::ObtenerTope() const
 {
     if(EstaVacia()){
-        //throw "Pila vac\241a";
         throw PilaVacia();
     }
+
     return elemento[tope];
 }
 
@@ -101,7 +86,6 @@ template <typename T>
 bool Pila<T>::EstaLlena() const
 {
     if(tope == capacidad-1){
-        std::cout << "SE LLENO JAJA" << std::endl;
         return true;
     }
 
@@ -141,7 +125,9 @@ void Pila<T>::Imprimir() const
     for(int i = tope ; i >= 0 ; --i){
         std::cout << elemento[i] << ", ";
     }
-    if(!EstaVacia()) std::cout << "\b\b" << std::endl;
+    if(!EstaVacia()){
+        std::cout << "\b\b ";
+    }
 }
 
 //***********************************
@@ -149,7 +135,7 @@ void Pila<T>::Imprimir() const
 //***********************************
 
 template <typename T>
-Pila<T>::PilaVacia::PilaVacia() throw() /*: mensaje("La pila se encuentra vac\241a")*/{}
+Pila<T>::PilaVacia::PilaVacia() throw() {}
 
 //***********************************
 
@@ -164,9 +150,6 @@ const char *Pila<T>::PilaVacia::what() const throw()
 template <typename T>
 void Pila<T>::Redimensionar()
 {
-    // Guardar el arreglo en un puntero auxuliar
-    // Borrar la memoria vieja
-    // Crear nueva memoria para el
 
     try{
         int nuevaCapacidad = capacidad*2;
@@ -188,6 +171,38 @@ void Pila<T>::Redimensionar()
 }
 
 //***********************************
+
+template <typename T>
+Pila<T> & Pila<T>::operator=(const Pila<T> &pila)
+{
+    try{
+        // Evita la auto-asignacion
+        if(this == &pila){
+            return *this;
+        }
+
+        T *nuevoElemento = new T[pila.capacidad];
+
+        for (int i = 0; i <= pila.tope; i++){
+            nuevoElemento[i] = pila.elemento[i];
+        }
+
+        delete[] elemento;
+
+        elemento = nuevoElemento;
+
+        this->capacidad = pila.capacidad;
+        this->tope = pila.tope;
+
+
+    }catch(const std::bad_alloc&){
+        throw "Error: No hay memoria disponible.";
+    }
+
+    return *this;
+}
+
+//***********************************
 // Amiguitas de la plantilla de clase Pila<T>
 //***********************************
 
@@ -204,5 +219,7 @@ std::ostream & operator<<(std::ostream & salida, const Pila<TT> &pila)
 
     return salida;
 }
+
+
 
 

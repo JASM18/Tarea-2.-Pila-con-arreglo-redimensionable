@@ -1,8 +1,5 @@
 #include <iostream>
 
-// Hola mundo jajajaja
-//nya ichi ni sn nya
-
 #include "Pila.hpp"
 #include "Vector.hpp"
 
@@ -10,104 +7,190 @@ using namespace std;
 
 int main()
 {
-    string hola = "mundo";
-
-    cout << hola.capacity() << endl;
-
-
-
-    /*
-
-    try{
-        Pila<int> P;
-
-        for(int i = 0 ; i < 15 ; ++i){
-            P.Agregar(i);
-            cout << endl;
-            cout << P;
-            cout << endl;
-            cout << P.ObtenerCapacidad();
-        }
-
-
-        cout << P;
-
-    }catch(Pila<int>::PilaVacia &errorVacio){
-        //cerr << "Error: " << errorVacio.QuePaso() << endl;
-        cerr << "Error en la pila: " << errorVacio.what() << endl;
-    }catch(...){
-        cerr << "Ocurri\242 un error inesperado" << endl;
-    }
-    */
-
-    /*
 
     // PILA DE ENTEROS
     try{
-        cout << "-----> PILA DE ENTEROS <-----" << endl;
-        Pila<int> A; // La pila es una pila de enteros
+        cout << "========================================" << endl;
+        cout << "-----> COMPROBANDO MÉTODOS (int) <-----" << endl;
+        cout << "========================================" << endl << endl;
 
-        A.Imprimir();
+        Pila<int> A, B;
 
-        for(int i = 0 ; i < 5 ; ++i){
+        cout << "-> 1. Verificando parametros del constructor por default..." << endl;
+        cout << "Capacidad: " << A.ObtenerCapacidad() << endl;
+        cout << "Elementos en la pila: " << A.ObtenerTam() << endl;
+        cout << endl;
+
+
+        cout << "-> 2. Agregando elementos a la pila A (0,1, ..., 12)" << endl;
+        for(int i = 0 ; i < 13 ; ++i){
             A.Agregar(i);
         }
 
-        A.Agregar(6);
-
+        cout << "Pila A: ";
+        A.Imprimir();
         cout << endl;
 
+
+        cout << "\n-> 3. Verificando el operador de asignación..." << endl;
+        cout << "B = A..." << endl;
+        B = A;
+
+        cout << "Pila B:";
+        B.Imprimir();
+        cout << endl;
+
+
+        cout << "\n-> 4. Verificando el Constructor de Copias ( Pila<int> C(A) )..." << endl;
+        Pila<int> C(A);
+        cout << "Pila C: ";
+        C.Imprimir();
+        cout << endl;
+
+
+        cout << "\n-> 5. Comprobando algunos métodos..." << endl;
+        cout << "Obtener el elemento en el tope de la pila: " << A.ObtenerTope() << endl;
+        cout << "\250La pila esta vacia?: " << (A.EstaVacia() ? "Si" : "No") << endl;
+        cout << "Conocer el número de elementos que tiene la pila: " << A.ObtenerTam() << endl;
+        cout << "Conocer la capacidad de la pila: " << A.ObtenerCapacidad() << endl;
+
+
+        cout << "\n-> 6. Probando el metodo Eliminar()..." << endl;
+        cout << "Eliminando el elemento del tope [" << A.ObtenerTope() << "]..." << endl;
+        A.Eliminar();
+        cout << "Pila A despues de eliminar: ";
         A.Imprimir();
+        cout << "\nNuevo tope: " << A.ObtenerTope() << endl;
+
+
+        cout << "\n-> 7. Probando Redimensionar()" << endl;
+
+        for(int i = A.ObtenerTam() ; i < 17 ; ++i){
+            A.Agregar(i);
+            cout << "A = ";
+            A.Imprimir();
+            cout << "\nCapacidad: " << A.ObtenerCapacidad() << " | Elementos: " << A.ObtenerTam() << endl;
+            cout << endl;
+        }
+
+
+        cout << "-> 8. Vaciando la pila..." << endl;
+        A.Vaciar();
+        cout << "Pila A: ";
+        A.Imprimir();
+        cout << "\250La pila esta vacia?: " << (A.EstaVacia() ? "Si" : "No") << endl;
+
+
+        cout << "\n-> 9. Forzando la excepcion PilaVacia()..." << endl;
+        cout << "Tope: " << A.ObtenerTope() << endl; // Esto hara que salte al catch
 
     }catch(Pila<int>::PilaVacia &errorVacio){
-        //cerr << "Error: " << errorVacio.QuePaso() << endl;
         cerr << "Error en la pila: " << errorVacio.what() << endl;
     }catch(...){
         cerr << "Ocurri\242 un error inesperado" << endl;
     }
     cout << endl;
 
-    // PILA DE CARACTERES
-    try{
-        cout << "-----> PILA DE CARACTERES <-----" << endl;
-        Pila<char> A; // La pila es una pila de caracteres
-
-        //cout << A.ObtenerTope() << endl;
-
-        A.Imprimir();
-        cout << endl;
-
-        A.Agregar('a');
-
-        A.Imprimir();
-
-        A.Agregar('x');
-
-        A.Imprimir();
-
-    }catch(Pila<char>::PilaVacia &errorVacio){
-        //cerr << "Error: " << errorVacio.QuePaso() << endl;
-        cerr << "Error en la pila: " << errorVacio.what() << endl;
-    }catch(...){
-        cerr << "Ocurri\242 un error inesperado" << endl;
-    }
-    cout << endl;
+    system("pause");
+    system("CLS");
 
     // PILA DE CADENA DE CARACTERES
     try{
-        cout << "-----> PILA DE CADENA DE CARACTERES <-----" << endl;
-        Pila<string> A; // La pila es una pila de cadena de caracteres
+        cout << "========================================" << endl;
+        cout << "-----> COMPROBANDO MÉTODOS (string) <-----" << endl;
+        cout << "========================================" << endl << endl;
 
+        Pila<string> A, B;
+
+        cout << "-> 1. Verificando parametros del constructor por default..." << endl;
+        cout << "Capacidad: " << A.ObtenerCapacidad() << endl;
+        cout << "Elementos en la pila: " << A.ObtenerTam() << endl;
+        cout << endl;
+
+
+        cout << "-> 2. Agregando elementos a la pila A" << endl;
+        A.Agregar("Hola"); // Elemento 1
+        A.Agregar("Mundo"); // Elemento 2
+        A.Agregar("Cruel"); // Elemento 3
+        A.Agregar("Programa"); // Elemento 4
+        A.Agregar("Creado"); // Elemento 5
+        A.Agregar("Por"); // Elemento 6
+        A.Agregar("Axel"); // Elemento 7
+        A.Agregar("y por"); // Elemento 8
+        A.Agregar("Marian"); // Elemento 9
+        A.Agregar("Los mas papu pros"); // Elemento 10
+        A.Agregar("e11"); // Elemento 11
+        A.Agregar("e12"); // Elemento 12
+        A.Agregar("e13"); // Elemento 13
+        A.Agregar("e14"); // Elemento 14
+
+        cout << "Pila A: ";
         A.Imprimir();
         cout << endl;
 
-        A.Agregar("hola");
 
+        cout << "\n-> 3. Verificando el operador de asignación..." << endl;
+        cout << "B = A..." << endl;
+        B = A;
+
+        cout << "Pila B:";
+        B.Imprimir();
+        cout << endl;
+
+
+        cout << "\n-> 4. Verificando el Constructor de Copias ( Pila<int> C(A) )..." << endl;
+        Pila<string> C(A);
+        cout << "Pila C: ";
+        C.Imprimir();
+        cout << endl;
+
+
+        cout << "\n-> 5. Comprobando algunos métodos..." << endl;
+        cout << "Obtener el elemento en el tope de la pila: " << A.ObtenerTope() << endl;
+        cout << "\250La pila esta vacia?: " << (A.EstaVacia() ? "Si" : "No") << endl;
+        cout << "Conocer el número de elementos que tiene la pila: " << A.ObtenerTam() << endl;
+        cout << "Conocer la capacidad de la pila: " << A.ObtenerCapacidad() << endl;
+
+
+        cout << "\n-> 6. Probando el metodo Eliminar()..." << endl;
+        cout << "Eliminando el elemento del tope [" << A.ObtenerTope() << "]..." << endl;
+        A.Eliminar();
+        cout << "Pila A despues de eliminar: ";
         A.Imprimir();
+        cout << "\nNuevo tope: " << A.ObtenerTope() << endl;
 
-        A.Agregar("mundo");
 
+        cout << "\n-> 7. Probando Redimensionar()" << endl;
+
+        A.Agregar("Ya casi"); // Elemento 15
+        cout << "A = ";
         A.Imprimir();
+        cout << "\nCapacidad: " << A.ObtenerCapacidad() << " | Elementos: " << A.ObtenerTam() << endl;
+        cout << endl;
+
+        A.Agregar("Se duplica"); // Elemento 16
+        cout << "A = ";
+        A.Imprimir();
+        cout << "\nCapacidad: " << A.ObtenerCapacidad() << " | Elementos: " << A.ObtenerTam() << endl;
+        cout << endl;
+
+        A.Agregar("La capacidad"); // Elemento 17
+        cout << "A = ";
+        A.Imprimir();
+        cout << "\nCapacidad: " << A.ObtenerCapacidad() << " | Elementos: " << A.ObtenerTam() << endl;
+        cout << endl;
+
+
+        cout << "-> 8. Vaciando la pila..." << endl;
+        A.Vaciar();
+        cout << "Pila A: ";
+        A.Imprimir();
+        cout << endl;
+        cout << "\250La pila esta vacia?: " << (A.EstaVacia() ? "Si" : "No") << endl;
+
+
+        cout << "\n-> 9. Forzando la excepcion PilaVacia()..." << endl;
+        cout << "Tope: " << A.ObtenerTope() << endl; // Esto hara que salte al catch
 
     }catch(Pila<string>::PilaVacia &errorVacio){
         cerr << "Error en la pila: " << errorVacio.what() << endl;
@@ -116,68 +199,94 @@ int main()
     }
     cout << endl;
 
+    system("pause");
+    system("CLS");
+
     // PILA DE VECTORES
     try{
-        cout << "-----> PILA DE VECTORES <-----" << endl;
-        Pila<Vector> A; // La pila es una pila de vectores
+        cout << "========================================" << endl;
+        cout << "-----> COMPROBANDO MÉTODOS (Vector) <-----" << endl;
+        cout << "========================================" << endl << endl;
 
+        Pila<Vector> A, B;
+
+        cout << "-> 1. Verificando parametros del constructor por default..." << endl;
+        cout << "Capacidad: " << A.ObtenerCapacidad() << endl;
+        cout << "Elementos en la pila: " << A.ObtenerTam() << endl;
+        cout << endl;
+
+
+        cout << "-> 2. Agregando elementos a la pila A" << endl;
+        for(int i = 0 ; i < 13 ; ++i){
+            A.Agregar(Vector(3, i));
+        }
+
+        cout << "Pila A: ";
         A.Imprimir();
         cout << endl;
 
-        A.Agregar(Vector(5,1));
 
+        cout << "\n-> 3. Verificando el operador de asignación..." << endl;
+        cout << "B = A..." << endl;
+        B = A;
+
+        cout << "Pila B:";
+        B.Imprimir();
+        cout << endl;
+
+
+        cout << "\n-> 4. Verificando el Constructor de Copias ( Pila<int> C(A) )..." << endl;
+        Pila<Vector> C(A);
+        cout << "Pila C: ";
+        C.Imprimir();
+        cout << endl;
+
+
+        cout << "\n-> 5. Comprobando algunos métodos..." << endl;
+        cout << "Obtener el elemento en el tope de la pila: " << A.ObtenerTope() << endl;
+        cout << "\250La pila esta vacia?: " << (A.EstaVacia() ? "Si" : "No") << endl;
+        cout << "Conocer el número de elementos que tiene la pila: " << A.ObtenerTam() << endl;
+        cout << "Conocer la capacidad de la pila: " << A.ObtenerCapacidad() << endl;
+
+
+        cout << "\n-> 6. Probando el metodo Eliminar()..." << endl;
+        cout << "Eliminando el elemento del tope [" << A.ObtenerTope() << "]..." << endl;
+        A.Eliminar();
+        cout << "Pila A despues de eliminar: ";
         A.Imprimir();
+        cout << "\nNuevo tope: " << A.ObtenerTope() << endl;
 
-        A.Agregar(Vector(2,1.5));
 
+        cout << "\n-> 7. Probando Redimensionar()" << endl;
+
+        for(int i = A.ObtenerTam() ; i < 17 ; ++i){
+            A.Agregar(Vector(3, i));
+            cout << "A = ";
+            A.Imprimir();
+            cout << "\nCapacidad: " << A.ObtenerCapacidad() << " | Elementos: " << A.ObtenerTam() << endl;
+            cout << endl;
+        }
+
+        cout << "-> 8. Vaciando la pila..." << endl;
+        A.Vaciar();
+        cout << "Pila A: ";
         A.Imprimir();
+        cout << endl;
+        cout << "\250La pila esta vacia?: " << (A.EstaVacia() ? "Si" : "No") << endl;
+
+
+        cout << "\n-> 9. Forzando la excepcion PilaVacia()..." << endl;
+        cout << "Tope: " << A.ObtenerTope() << endl; // Esto hara que salte al catch
 
     }catch(Pila<Vector>::PilaVacia &errorVacio){
         cerr << "Error en la pila: " << errorVacio.what() << endl;
     }catch(...){
         cerr << "Ocurri\242 un error inesperado" << endl;
     }
+
     cout << endl;
 
-    // PILA DE PILAS
-    try{
-        cout << "-----> PILA DE PILAS DE ENTERO <-----" << endl;
-        Pila<Pila<int>> p; // La pila es una pila de pilas de enteros
-        Pila<int> pilita;
-
-        p.Imprimir();
-        cout << endl;
-
-        p.Agregar(pilita);
-
-        p.Imprimir();
-
-        pilita.Agregar(-4);
-
-        p.Agregar(pilita);
-
-        p.Imprimir();
-        cout << endl;
-
-        pilita.Agregar(5);
-        pilita.Agregar(0);
-        pilita.Agregar(145);
-
-        p.Agregar(pilita);
-
-        p.Imprimir();
-        cout << endl;
-
-    }catch(Pila<int>::PilaVacia &errorVacio){
-        cerr << "Error en la pilita: " << errorVacio.what() << endl;
-    }catch(Pila<Pila<int>>::PilaVacia &errorVacio){
-        cerr << "Error en la pila: " << errorVacio.what() << endl;
-    }catch(...){
-        cerr << "Ocurri\242 un error inesperado" << endl;
-    }
-
-    */
-
+    system("pause");
     return 0;
 }
 
