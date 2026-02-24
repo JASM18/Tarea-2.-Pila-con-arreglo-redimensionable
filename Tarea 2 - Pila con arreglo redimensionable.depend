@@ -16,17 +16,19 @@
 	"Vector.hpp"
 	<iostream>
 
-1771803201 source:e:\github\tarea-2.-pila-con-arreglo-redimensionable\main.cpp
+1771915829 source:e:\github\tarea-2.-pila-con-arreglo-redimensionable\main.cpp
 	<iostream>
 	"Pila.hpp"
 	"Vector.hpp"
 
-1771803201 e:\github\tarea-2.-pila-con-arreglo-redimensionable\pila.hpp
+1771915829 e:\github\tarea-2.-pila-con-arreglo-redimensionable\pila.hpp
+	<iostream>
+	"Pila.hpp"
 	<iostream>
 	<exception>
 	"Pila.tpp"
 
-1771805505 e:\github\tarea-2.-pila-con-arreglo-redimensionable\pila.tpp
+1771915829 e:\github\tarea-2.-pila-con-arreglo-redimensionable\pila.tpp
 
 1771798640 e:\github\tarea-2.-pila-con-arreglo-redimensionable\vector.hpp
 	<iostream>

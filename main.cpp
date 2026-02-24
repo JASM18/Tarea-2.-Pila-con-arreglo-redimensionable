@@ -1,4 +1,18 @@
-#include <iostream>
+/**
+ * \file main.cpp
+ * \brief Cliente que prueba la plantilla de clase Pila con distintos tipos de datos.
+ *
+ * En este archivo se encuentra el código principal que sirve como cliente de la plantilla
+ * de clase Pila. Aquí se prueban los diferentes recursos que la clase ofrece utilizando
+ * varios tipos de datos como int, string y Vector.
+ *
+ * \author S&aacute;nchez Montoy, Jes&uacute;s Axel
+            Portugal Arreola, Marian Bethsab&eacute;
+
+ * \date 20/02/2026
+ */
+
+ #include <iostream>
 
 #include "Pila.hpp"
 #include "Vector.hpp"
@@ -11,12 +25,12 @@ int main()
     // PILA DE ENTEROS
     try{
         cout << "========================================" << endl;
-        cout << "-----> COMPROBANDO MÉTODOS (int) <-----" << endl;
+        cout << "-----> COMPROBANDO M\220TODOS (int) <-----" << endl;
         cout << "========================================" << endl << endl;
 
         Pila<int> A, B;
 
-        cout << "-> 1. Verificando parametros del constructor por default..." << endl;
+        cout << "-> 1. Verificando par\240metros del constructor por default..." << endl;
         cout << "Capacidad: " << A.ObtenerCapacidad() << endl;
         cout << "Elementos en la pila: " << A.ObtenerTam() << endl;
         cout << endl;
@@ -32,7 +46,7 @@ int main()
         cout << endl;
 
 
-        cout << "\n-> 3. Verificando el operador de asignación..." << endl;
+        cout << "\n-> 3. Verificando el operador de asignaci\242n..." << endl;
         cout << "B = A..." << endl;
         B = A;
 
@@ -48,17 +62,17 @@ int main()
         cout << endl;
 
 
-        cout << "\n-> 5. Comprobando algunos métodos..." << endl;
+        cout << "\n-> 5. Comprobando algunos m\202todos..." << endl;
         cout << "Obtener el elemento en el tope de la pila: " << A.ObtenerTope() << endl;
-        cout << "\250La pila esta vacia?: " << (A.EstaVacia() ? "Si" : "No") << endl;
-        cout << "Conocer el número de elementos que tiene la pila: " << A.ObtenerTam() << endl;
+        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "S\241." : "No.") << endl;
+        cout << "Conocer el n\243mero de elementos que tiene la pila: " << A.ObtenerTam() << endl;
         cout << "Conocer la capacidad de la pila: " << A.ObtenerCapacidad() << endl;
 
 
-        cout << "\n-> 6. Probando el metodo Eliminar()..." << endl;
+        cout << "\n-> 6. Probando el m\202todo Eliminar()..." << endl;
         cout << "Eliminando el elemento del tope [" << A.ObtenerTope() << "]..." << endl;
         A.Eliminar();
-        cout << "Pila A despues de eliminar: ";
+        cout << "Pila A despu\202s de eliminar: ";
         A.Imprimir();
         cout << "\nNuevo tope: " << A.ObtenerTope() << endl;
 
@@ -78,16 +92,16 @@ int main()
         A.Vaciar();
         cout << "Pila A: ";
         A.Imprimir();
-        cout << "\250La pila esta vacia?: " << (A.EstaVacia() ? "Si" : "No") << endl;
+        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "S\241." : "No.") << endl;
 
 
-        cout << "\n-> 9. Forzando la excepcion PilaVacia()..." << endl;
+        cout << "\n-> 9. Forzando la excepci\242n PilaVacia()..." << endl;
         cout << "Tope: " << A.ObtenerTope() << endl; // Esto hara que salte al catch
 
     }catch(Pila<int>::PilaVacia &errorVacio){
         cerr << "Error en la pila: " << errorVacio.what() << endl;
     }catch(...){
-        cerr << "Ocurri\242 un error inesperado" << endl;
+        cerr << "Ocurri\242 un error inesperado." << endl;
     }
     cout << endl;
 
@@ -97,12 +111,12 @@ int main()
     // PILA DE CADENA DE CARACTERES
     try{
         cout << "========================================" << endl;
-        cout << "-----> COMPROBANDO MÉTODOS (string) <-----" << endl;
+        cout << "-----> COMPROBANDO M\220TODOS (string) <-----" << endl;
         cout << "========================================" << endl << endl;
 
         Pila<string> A, B;
 
-        cout << "-> 1. Verificando parametros del constructor por default..." << endl;
+        cout << "-> 1. Verificando par\240metros del constructor por default..." << endl;
         cout << "Capacidad: " << A.ObtenerCapacidad() << endl;
         cout << "Elementos en la pila: " << A.ObtenerTam() << endl;
         cout << endl;
@@ -129,7 +143,7 @@ int main()
         cout << endl;
 
 
-        cout << "\n-> 3. Verificando el operador de asignación..." << endl;
+        cout << "\n-> 3. Verificando el operador de asignaci\242n..." << endl;
         cout << "B = A..." << endl;
         B = A;
 
@@ -145,17 +159,17 @@ int main()
         cout << endl;
 
 
-        cout << "\n-> 5. Comprobando algunos métodos..." << endl;
+        cout << "\n-> 5. Comprobando algunos m\202todos..." << endl;
         cout << "Obtener el elemento en el tope de la pila: " << A.ObtenerTope() << endl;
-        cout << "\250La pila esta vacia?: " << (A.EstaVacia() ? "Si" : "No") << endl;
-        cout << "Conocer el número de elementos que tiene la pila: " << A.ObtenerTam() << endl;
+        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "S\241." : "No.") << endl;
+        cout << "Conocer el n\243mero de elementos que tiene la pila: " << A.ObtenerTam() << endl;
         cout << "Conocer la capacidad de la pila: " << A.ObtenerCapacidad() << endl;
 
 
-        cout << "\n-> 6. Probando el metodo Eliminar()..." << endl;
+        cout << "\n-> 6. Probando el m\202todo Eliminar()..." << endl;
         cout << "Eliminando el elemento del tope [" << A.ObtenerTope() << "]..." << endl;
         A.Eliminar();
-        cout << "Pila A despues de eliminar: ";
+        cout << "Pila A despu\202s de eliminar: ";
         A.Imprimir();
         cout << "\nNuevo tope: " << A.ObtenerTope() << endl;
 
@@ -186,16 +200,16 @@ int main()
         cout << "Pila A: ";
         A.Imprimir();
         cout << endl;
-        cout << "\250La pila esta vacia?: " << (A.EstaVacia() ? "Si" : "No") << endl;
+        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "S\241." : "No.") << endl;
 
 
-        cout << "\n-> 9. Forzando la excepcion PilaVacia()..." << endl;
+        cout << "\n-> 9. Forzando la excepci\242n PilaVacia()..." << endl;
         cout << "Tope: " << A.ObtenerTope() << endl; // Esto hara que salte al catch
 
     }catch(Pila<string>::PilaVacia &errorVacio){
         cerr << "Error en la pila: " << errorVacio.what() << endl;
     }catch(...){
-        cerr << "Ocurri\242 un error inesperado" << endl;
+        cerr << "Ocurri\242 un error inesperado." << endl;
     }
     cout << endl;
 
@@ -205,12 +219,12 @@ int main()
     // PILA DE VECTORES
     try{
         cout << "========================================" << endl;
-        cout << "-----> COMPROBANDO MÉTODOS (Vector) <-----" << endl;
+        cout << "-----> COMPROBANDO M\220TODOS (Vector) <-----" << endl;
         cout << "========================================" << endl << endl;
 
         Pila<Vector> A, B;
 
-        cout << "-> 1. Verificando parametros del constructor por default..." << endl;
+        cout << "-> 1. Verificando par\240metros del constructor por default..." << endl;
         cout << "Capacidad: " << A.ObtenerCapacidad() << endl;
         cout << "Elementos en la pila: " << A.ObtenerTam() << endl;
         cout << endl;
@@ -226,7 +240,7 @@ int main()
         cout << endl;
 
 
-        cout << "\n-> 3. Verificando el operador de asignación..." << endl;
+        cout << "\n-> 3. Verificando el operador de asignaci\242n..." << endl;
         cout << "B = A..." << endl;
         B = A;
 
@@ -242,17 +256,17 @@ int main()
         cout << endl;
 
 
-        cout << "\n-> 5. Comprobando algunos métodos..." << endl;
+        cout << "\n-> 5. Comprobando algunos m\202todos..." << endl;
         cout << "Obtener el elemento en el tope de la pila: " << A.ObtenerTope() << endl;
-        cout << "\250La pila esta vacia?: " << (A.EstaVacia() ? "Si" : "No") << endl;
-        cout << "Conocer el número de elementos que tiene la pila: " << A.ObtenerTam() << endl;
+        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "S\241." : "No.") << endl;
+        cout << "Conocer el n\243mero de elementos que tiene la pila: " << A.ObtenerTam() << endl;
         cout << "Conocer la capacidad de la pila: " << A.ObtenerCapacidad() << endl;
 
 
-        cout << "\n-> 6. Probando el metodo Eliminar()..." << endl;
+        cout << "\n-> 6. Probando el m\202todo Eliminar()..." << endl;
         cout << "Eliminando el elemento del tope [" << A.ObtenerTope() << "]..." << endl;
         A.Eliminar();
-        cout << "Pila A despues de eliminar: ";
+        cout << "Pila A despu\202s de eliminar: ";
         A.Imprimir();
         cout << "\nNuevo tope: " << A.ObtenerTope() << endl;
 
@@ -272,16 +286,16 @@ int main()
         cout << "Pila A: ";
         A.Imprimir();
         cout << endl;
-        cout << "\250La pila esta vacia?: " << (A.EstaVacia() ? "Si" : "No") << endl;
+        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "S\241." : "No.") << endl;
 
 
-        cout << "\n-> 9. Forzando la excepcion PilaVacia()..." << endl;
+        cout << "\n-> 9. Forzando la excepci\242n PilaVacia()..." << endl;
         cout << "Tope: " << A.ObtenerTope() << endl; // Esto hara que salte al catch
 
     }catch(Pila<Vector>::PilaVacia &errorVacio){
         cerr << "Error en la pila: " << errorVacio.what() << endl;
     }catch(...){
-        cerr << "Ocurri\242 un error inesperado" << endl;
+        cerr << "Ocurri\242 un error inesperado." << endl;
     }
 
     cout << endl;
@@ -289,4 +303,3 @@ int main()
     system("pause");
     return 0;
 }
-

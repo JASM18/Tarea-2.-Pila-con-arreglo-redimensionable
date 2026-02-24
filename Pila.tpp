@@ -1,3 +1,15 @@
+/**
+ * \file Pila.tpp
+ * \brief Archivo que contiene la implementación de los métodos de la plantilla de clase Pila.
+ *
+ * En este archivo se define el comportamiento de cada método de la clase Pila,
+ * incluyendo constructores, destructores, sobrecargas y funciones de manejo de elementos.
+ *
+ * \author S&aacute;nchez Montoy, Jes&uacute;s Axel
+            Portugal Arreola, Marian Bethsab&eacute;
+ * \date 20/02/2026
+ */
+
 #define SIN_ELEMENTOS -1
 
 //***********************************
@@ -142,7 +154,7 @@ Pila<T>::PilaVacia::PilaVacia() throw() {}
 template <typename T>
 const char *Pila<T>::PilaVacia::what() const throw()
 {
-    return "La pila se encuentra vac\241a";
+    return "La pila se encuentra vac\241a.";
 }
 
 //***********************************
@@ -166,7 +178,7 @@ void Pila<T>::Redimensionar()
         capacidad = nuevaCapacidad;
 
     }catch(const std::bad_alloc&){
-        throw "Error: No hay memoria para redimensionar la Pila.";
+        throw "Error: No hay memoria para redimensionar la pila.";
     }
 }
 
