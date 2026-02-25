@@ -1,4 +1,18 @@
-#include <iostream>
+/**
+ * \file main.cpp
+ * \brief Cliente que prueba la plantilla de clase Pila con distintos tipos de datos.
+ *
+ * En este archivo se encuentra el c&oacute;digo principal que sirve como cliente de la plantilla
+ * de clase Pila. Aqu&iacute; se prueban los diferentes recursos que la clase ofrece utilizando
+ * varios tipos de datos como int, string y Vector.
+ *
+ * \author S&aacute;nchez Montoy, Jes&uacute;s Axel
+            Portugal Arreola, Marian Bethsab&eacute;
+
+ * \date 23/02/2026
+ */
+
+ #include <iostream>
 
 #include "Pila.hpp"
 #include "Vector.hpp"
@@ -50,7 +64,7 @@ int main()
 
         cout << "\n-> 5. Comprobando algunos m\202todos..." << endl;
         cout << "Obtener el elemento en el tope de la pila: " << A.ObtenerTope() << endl;
-        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "S\241" : "No") << endl;
+        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "S\241." : "No.") << endl;
         cout << "Conocer el n\243mero de elementos que tiene la pila: " << A.ObtenerTam() << endl;
         cout << "Conocer la capacidad de la pila: " << A.ObtenerCapacidad() << endl;
 
@@ -78,7 +92,7 @@ int main()
         A.Vaciar();
         cout << "Pila A: ";
         A.Imprimir();
-        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "S\241" : "No") << endl;
+        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "S\241." : "No.") << endl;
 
 
         cout << "\n-> 9. Forzando la excepci\242n PilaVacia()..." << endl;
@@ -147,7 +161,7 @@ int main()
 
         cout << "\n-> 5. Comprobando algunos m\202todos..." << endl;
         cout << "Obtener el elemento en el tope de la pila: " << A.ObtenerTope() << endl;
-        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "Si" : "No") << endl;
+        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "S\241." : "No.") << endl;
         cout << "Conocer el n\243mero de elementos que tiene la pila: " << A.ObtenerTam() << endl;
         cout << "Conocer la capacidad de la pila: " << A.ObtenerCapacidad() << endl;
 
@@ -186,7 +200,7 @@ int main()
         cout << "Pila A: ";
         A.Imprimir();
         cout << endl;
-        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "Si" : "No") << endl;
+        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "S\241." : "No.") << endl;
 
 
         cout << "\n-> 9. Forzando la excepci\242n PilaVacia()..." << endl;
@@ -195,7 +209,7 @@ int main()
     }catch(Pila<string>::PilaVacia &errorVacio){
         cerr << "Error en la pila: " << errorVacio.what() << endl;
     }catch(...){
-        cerr << "Ocurri\242 un error inesperado" << endl;
+        cerr << "Ocurri\242 un error inesperado." << endl;
     }
     cout << endl;
 
@@ -244,7 +258,7 @@ int main()
 
         cout << "\n-> 5. Comprobando algunos m\202todos..." << endl;
         cout << "Obtener el elemento en el tope de la pila: " << A.ObtenerTope() << endl;
-        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "Si" : "No") << endl;
+        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "S\241." : "No.") << endl;
         cout << "Conocer el n\243mero de elementos que tiene la pila: " << A.ObtenerTam() << endl;
         cout << "Conocer la capacidad de la pila: " << A.ObtenerCapacidad() << endl;
 
@@ -272,7 +286,7 @@ int main()
         cout << "Pila A: ";
         A.Imprimir();
         cout << endl;
-        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "Si" : "No") << endl;
+        cout << "\250La pila esta vac\241a?: " << (A.EstaVacia() ? "S\241." : "No.") << endl;
 
 
         cout << "\n-> 9. Forzando la excepci\242n PilaVacia()..." << endl;
@@ -281,7 +295,7 @@ int main()
     }catch(Pila<Vector>::PilaVacia &errorVacio){
         cerr << "Error en la pila: " << errorVacio.what() << endl;
     }catch(...){
-        cerr << "Ocurri\242 un error inesperado" << endl;
+        cerr << "Ocurri\242 un error inesperado." << endl;
     }
 
     cout << endl;
@@ -289,4 +303,3 @@ int main()
     system("pause");
     return 0;
 }
-
