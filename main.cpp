@@ -12,7 +12,7 @@
  * \date 23/02/2026
  */
 
- #include <iostream>
+#include <iostream>
 
 #include "Pila.hpp"
 #include "Vector.hpp"
