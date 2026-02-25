@@ -1,13 +1,13 @@
 /**
  * \file Pila.tpp
- * \brief Archivo que contiene la implementación de los métodos de la plantilla de clase Pila.
+ * \brief Archivo que contiene la implementaci&oacute;n de los m&eacute;todos de la plantilla de clase Pila.
  *
- * En este archivo se define el comportamiento de cada método de la clase Pila,
+ * En este archivo se define el comportamiento de cada m&eacute;todo de la clase Pila,
  * incluyendo constructores, destructores, sobrecargas y funciones de manejo de elementos.
  *
  * \author S&aacute;nchez Montoy, Jes&uacute;s Axel
             Portugal Arreola, Marian Bethsab&eacute;
- * \date 20/02/2026
+ * \date 23/02/2026
  */
 
 #define SIN_ELEMENTOS -1

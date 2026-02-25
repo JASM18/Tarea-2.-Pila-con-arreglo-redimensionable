@@ -1,13 +1,13 @@
 /**
  * \file Pila.hpp
- * \brief Archivo que contiene la definición de la plantilla de clase Pila con un arreglo redimensionable.
+ * \brief Archivo que contiene la definici&oacute;n de la plantilla de clase Pila con un arreglo redimensionable.
  *
- * Este archivo declara la clase genérica Pila, que implementa una estructura de datos tipo pila
- * capaz de almacenar elementos de cualquier tipo y ajustar su capacidad de forma dinámica.
+ * Este archivo declara la clase gen&eacute;rica Pila, que implementa una estructura de datos tipo pila
+ * capaz de almacenar elementos de cualquier tipo y ajustar su capacidad de forma din&aacute;mica.
  *
  * \author S&aacute;nchez Montoy, Jes&uacute;s Axel
             Portugal Arreola, Marian Bethsab&eacute;
- * \date 20/02/2026
+ * \date 23/02/2026
  *
  * \code{.cpp}
 
@@ -117,18 +117,18 @@ int main()
 /**
  * \brief Plantilla de clase que implementa una pila con arreglo redimensionable.
  *
- * Esta clase define una pila genérica que permite almacenar datos de cualquier tipo.
- * Utiliza un arreglo dinámico que puede duplicar su capacidad cuando es necesario.
+ * Esta clase define una pila gen&eacute;rica que permite almacenar datos de cualquier tipo.
+ * Utiliza un arreglo din&aacute;mico que puede duplicar su capacidad cuando es necesario.
  *
- * \tparam T Tipo de dato que almacenará la pila.
+ * \tparam T Tipo de dato que almacenar&aacute; la pila.
  */
 template <typename T = int>
 class Pila {
-    /** \brief Función friend que permite imprimir el contenido de la pila usando el operador '<<'.
+    /** \brief Funci&oacute;n friend que permite imprimir el contenido de la pila usando el operador '<<'.
      *
-     * \tparam TT Tipo de dato de la pila que se imprimirá.
-     * \param salida Flujo de salida donde se mostrarán los elementos.
-     * \param pila Referencia constante a la pila que se imprimirá.
+     * \tparam TT Tipo de dato de la pila que se imprimir&aacute;.
+     * \param salida Flujo de salida donde se mostrar&aacute;n los elementos.
+     * \param pila Referencia constante a la pila que se imprimir&aacute;.
      * \return Referencia al flujo de salida (std::ostream).
      */
     template <typename TT>
@@ -137,7 +137,7 @@ class Pila {
 public:
     /** \brief Constructor por defecto de la clase Pila.
      *
-     * Inicializa la pila con una capacidad base y asigna memoria dinámica
+     * Inicializa la pila con una capacidad base y asigna memoria din&aacute;mica
      * para almacenar los elementos.
      *
      * \throw std::bad_alloc Si no hay memoria disponible para crear el arreglo.
@@ -154,85 +154,85 @@ public:
 
     /** \brief Destructor de la clase Pila.
      *
-     * Libera la memoria asignada dinámicamente al destruir el objeto.
+     * Libera la memoria asignada din&aacute;micamente al destruir el objeto.
      */
     ~Pila();
 
-    /** \brief Sobrecarga del operador de asignación.
+    /** \brief Sobrecarga del operador de asignaci&oacute;n.
      *
      * Permite copiar el contenido de una pila a otra asegurando que ambas
      * mantengan independencia en memoria.
      *
      * \param pila Referencia constante a la pila origen.
-     * \return Referencia a la pila actual después de la asignación.
+     * \return Referencia a la pila actual despu&eacute;s de la asignaci&oacute;n.
      * \throw std::bad_alloc Si ocurre un error de memoria durante la copia.
      */
     Pila &operator=(const Pila<T> &pila);
 
-    /** \brief Función que agrega un nuevo elemento al tope de la pila.
+    /** \brief Funci&oacute;n que agrega un nuevo elemento al tope de la pila.
      *
-     * Si la pila está llena, se redimensiona automáticamente antes de insertar
+     * Si la pila est&aacute; llena, se redimensiona autom&aacute;ticamente antes de insertar
      * el nuevo valor.
      *
-     * \param valor Elemento que se insertará en el tope de la pila.
+     * \param valor Elemento que se insertar&aacute; en el tope de la pila.
      */
     void Agregar(T valor);
 
-    /** \brief Función que elimina el elemento del tope de la pila.
+    /** \brief Funci&oacute;n que elimina el elemento del tope de la pila.
      *
-     * \pre La pila no debe estar vacía para eliminar un elemento.
-     * \throw PilaVacia Si se intenta eliminar un elemento de una pila vacía.
+     * \pre La pila no debe estar vac&iacute;a para eliminar un elemento.
+     * \throw PilaVacia Si se intenta eliminar un elemento de una pila vac&iacute;a.
      */
     void Eliminar();
 
-    /** \brief Función que obtiene el elemento actual en el tope de la pila.
+    /** \brief Funci&oacute;n que obtiene el elemento actual en el tope de la pila.
      *
      * \return Valor almacenado en el tope.
-     * \pre La pila no debe estar vacía para acceder al tope.
-     * \throw PilaVacia Si la pila se encuentra vacía.
+     * \pre La pila no debe estar vac&iacute;a para acceder al tope.
+     * \throw PilaVacia Si la pila se encuentra vac&iacute;a.
      */
     T ObtenerTope() const;
 
-    /** \brief Función que determina si la pila está vacía.
+    /** \brief Funci&oacute;n que determina si la pila est&aacute; vac&iacute;a.
      *
      * \return true si no hay elementos en la pila, false en caso contrario.
      */
     bool EstaVacia() const;
 
-    /** \brief Función que vacía por completo la pila.
+    /** \brief Funci&oacute;n que vac&iacute;a por completo la pila.
      *
-     * Establece el índice del tope a -1, eliminando lógicamente los elementos.
+     * Establece el &iacute;ndice del tope a -1, eliminando l&oacute;gicamente los elementos.
      */
     void Vaciar();
 
-    /** \brief Función que devuelve la cantidad de elementos actuales en la pila.
+    /** \brief Funci&oacute;n que devuelve la cantidad de elementos actuales en la pila.
      *
-     * \return Número de elementos almacenados actualmente.
+     * \return N&uacute;mero de elementos almacenados actualmente.
      */
     int ObtenerTam() const;
 
-    /** \brief Función que devuelve la capacidad total del arreglo dinámico.
+    /** \brief Funci&oacute;n que devuelve la capacidad total del arreglo din&aacute;mico.
      *
-     * \return Capacidad máxima actual de la pila.
+     * \return Capacidad m&aacute;xima actual de la pila.
      */
     int ObtenerCapacidad() const;
 
-    /** \brief Función que imprime los elementos de la pila (solo para pruebas).
+    /** \brief Funci&oacute;n que imprime los elementos de la pila (solo para pruebas).
      *
      * Muestra los elementos desde el tope hasta la base.
      */
     void Imprimir() const;
 
     /**
-     * \brief Clase interna que representa una excepción lanzada cuando se intenta operar con una pila vacía.
+     * \brief Clase interna que representa una excepci&oacute;n lanzada cuando se intenta operar con una pila vac&iacute;a.
      */
     class PilaVacia : public std::exception {
     public:
-        /** \brief Constructor por defecto de la excepción PilaVacia.
+        /** \brief Constructor por defecto de la excepci&oacute;n PilaVacia.
          */
         PilaVacia() throw();
 
-        /** \brief Devuelve una descripción del error al intentar operar con una pila vacía.
+        /** \brief Devuelve una descripci&oacute;n del error al intentar operar con una pila vac&iacute;a.
          *
          * \return Cadena de caracteres con el mensaje de error.
          */
@@ -244,18 +244,18 @@ private:
     int tope;           /// Índice del elemento en el tope de la pila (-1 indica que está vacía).
     T *elemento;        /// Puntero al arreglo dinámico que contiene los elementos.
 
-    /** \brief Función que determina si la pila está llena.
+    /** \brief Funci&oacute;n que determina si la pila est&aacute; llena.
      *
-     * \return true si la pila ha alcanzado su capacidad máxima, false en caso contrario.
+     * \return true si la pila ha alcanzado su capacidad m&aacute;xima, false en caso contrario.
      */
     bool EstaLlena() const;
 
-    /** \brief Función que duplica la capacidad del arreglo dinámico.
+    /** \brief Funci&oacute;n que duplica la capacidad del arreglo din&aacute;mico.
      *
-     * Se utiliza internamente cuando la pila necesita más espacio.
+     * Se utiliza internamente cuando la pila necesita m&aacute;s espacio.
      *
-     * \warning Esta operación puede consumir más memoria y requiere copiar los elementos existentes.
-     * \throw std::bad_alloc Si falla la asignación de nueva memoria.
+     * \warning Esta operaci&oacute;n puede consumir m&aacute;s memoria y requiere copiar los elementos existentes.
+     * \throw std::bad_alloc Si falla la asignaci&oacute;n de nueva memoria.
      */
     void Redimensionar();
 };

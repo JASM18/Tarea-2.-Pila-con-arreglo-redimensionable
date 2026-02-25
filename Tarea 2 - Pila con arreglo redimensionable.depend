@@ -1,15 +1,17 @@
 # depslib dependency file v1.0
-1771816624 source:c:\users\axel\desktop\4to semestre\estructura de datos\tareas\tarea 2 - pila con arreglo redimensionable\main.cpp
+1771993794 source:c:\users\axel\desktop\4to semestre\estructura de datos\tareas\tarea 2 - pila con arreglo redimensionable\main.cpp
 	<iostream>
 	"Pila.hpp"
 	"Vector.hpp"
 
-1771816879 c:\users\axel\desktop\4to semestre\estructura de datos\tareas\tarea 2 - pila con arreglo redimensionable\pila.hpp
+1771993794 c:\users\axel\desktop\4to semestre\estructura de datos\tareas\tarea 2 - pila con arreglo redimensionable\pila.hpp
+	<iostream>
+	"Pila.hpp"
 	<iostream>
 	<exception>
 	"Pila.tpp"
 
-1771816979 c:\users\axel\desktop\4to semestre\estructura de datos\tareas\tarea 2 - pila con arreglo redimensionable\pila.tpp
+1771993794 c:\users\axel\desktop\4to semestre\estructura de datos\tareas\tarea 2 - pila con arreglo redimensionable\pila.tpp
 
 1770313153 c:\users\axel\desktop\4to semestre\estructura de datos\tareas\tarea 2 - pila con arreglo redimensionable\vector.hpp
 	<iostream>

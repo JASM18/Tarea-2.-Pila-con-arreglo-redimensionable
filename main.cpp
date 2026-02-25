@@ -2,14 +2,14 @@
  * \file main.cpp
  * \brief Cliente que prueba la plantilla de clase Pila con distintos tipos de datos.
  *
- * En este archivo se encuentra el código principal que sirve como cliente de la plantilla
- * de clase Pila. Aquí se prueban los diferentes recursos que la clase ofrece utilizando
+ * En este archivo se encuentra el c&oacute;digo principal que sirve como cliente de la plantilla
+ * de clase Pila. Aqu&iacute; se prueban los diferentes recursos que la clase ofrece utilizando
  * varios tipos de datos como int, string y Vector.
  *
  * \author S&aacute;nchez Montoy, Jes&uacute;s Axel
             Portugal Arreola, Marian Bethsab&eacute;
 
- * \date 20/02/2026
+ * \date 23/02/2026
  */
 
  #include <iostream>
